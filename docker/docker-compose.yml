@@ -1,9 +1,7 @@
 version: '3'
 services:
   mall4j-mysql:
-    build:
-      context: ./
-      dockerfile: ./db/Dockerfile
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: root
     restart: always
