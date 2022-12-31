@@ -259,6 +259,7 @@ public class TokenStore {
             }
         }
         catch (Exception e) {
+            e.printStackTrace();
             throw new YamiShopBindException(YamiHttpStatus.UNAUTHORIZED,"token error2");
         }
 
