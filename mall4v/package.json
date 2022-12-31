@@ -10,7 +10,7 @@
   "dependencies": {
     "@smallwei/avue": "2.8.27",
     "axios": "0.18.1",
-    "core-js": "3.6.5",
+    "core-js": "^3.27.1",
     "crypto-js": "^4.1.1",
     "element-ui": "2.15.7",
     "lodash": "4.17.5",
