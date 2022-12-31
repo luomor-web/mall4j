@@ -5,6 +5,12 @@ mvn clean package
 cd docker
 docker-compose up
 docker-compose up -d
+
+docker-compose up -d mall4j-admin
+docker-compose stop mall4j-admin
+
+docker-compose up -d mall4j-api
+
 docker-compose up -d mall4j-redis
 docker-compose down
 

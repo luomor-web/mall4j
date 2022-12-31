@@ -245,6 +245,7 @@ public class TokenStore {
         String decryptStr;
         String decryptToken;
         try {
+            logger.info(data);
             decryptStr = aes.decryptStr(data);
             decryptToken = decryptStr.substring(0,32);
             // 创建token的时间，token使用时效性，防止攻击者通过一堆的尝试找到aes的密码，虽然aes是目前几乎最好的加密算法
