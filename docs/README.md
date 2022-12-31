@@ -4,6 +4,7 @@ mvn package
 cd docker
 docker-compose up
 docker-compose up -d
+docker-compose up -d mall4j-redis
 docker-compose down
 
 docker-compose build
