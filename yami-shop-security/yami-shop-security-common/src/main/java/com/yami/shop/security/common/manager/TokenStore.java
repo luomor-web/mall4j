@@ -255,16 +255,16 @@ public class TokenStore {
             int expiresIn = getExpiresIn(sysType);
             long second = 1000L;
             if (System.currentTimeMillis() - createTokenTime > expiresIn * second) {
-                throw new YamiShopBindException(YamiHttpStatus.UNAUTHORIZED,"token error");
+                throw new YamiShopBindException(YamiHttpStatus.UNAUTHORIZED,"token error1");
             }
         }
         catch (Exception e) {
-            throw new YamiShopBindException(YamiHttpStatus.UNAUTHORIZED,"token error");
+            throw new YamiShopBindException(YamiHttpStatus.UNAUTHORIZED,"token error2");
         }
 
         // 防止解密后的token是脚本，从而对redis进行攻击，uuid只能是数字和小写字母
         if (!PrincipalUtil.isSimpleChar(decryptToken)) {
-            throw new YamiShopBindException(YamiHttpStatus.UNAUTHORIZED,"token error");
+            throw new YamiShopBindException(YamiHttpStatus.UNAUTHORIZED,"token error3");
         }
         return decryptToken;
     }
