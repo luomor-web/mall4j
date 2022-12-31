@@ -15,11 +15,24 @@ services:
     command: --lower_case_table_names=1
 
   mall4j-redis:
-    image: redis:5.0.4
-    restart: always
+    #定义主机名
     container_name: mall4j-redis
+    #使用的镜像；注意这里的版本要与第2步redis版本一致
+    image: redis:6.0.6
+    #容器的映射端口
     ports:
-      - 6379:6379
+      - 6379:6379 #注意第二个端口必须是redis.conf中的端口号
+    command: redis-server /etc/redis.conf
+    #定义挂载点
+    volumes:
+      - ./data:/data #挂载/docker-compose/redis/data至容器
+      - ./conf/redis.conf:/etc/redis.conf #挂载conf至容器
+    privileged: true   #环境变量
+    environment:
+      - TZ=Asia/Shanghai
+      - LANG=en_US.UTF-8
+    #docker 重启后，容器自启动
+    restart: always
 
   mall4j-admin:
     build:
@@ -31,7 +44,7 @@ services:
       REDIS_HOST: mall4j-redis
       REDIS_PORT: 6379
       REDIS_DATABASE: 0
-      # REDIS_PASSWORD: null
+      REDIS_PASSWORD: test
       MYSQL_HOST: mall4j-mysql
       MYSQL_PORT: 3306
       MYSQL_DATABASE: yami_shops
@@ -56,7 +69,7 @@ services:
       REDIS_HOST: mall4j-redis
       REDIS_PORT: 6379
       REDIS_DATABASE: 0
-      # REDIS_PASSWORD: null
+      REDIS_PASSWORD: test
       MYSQL_HOST: mall4j-mysql
       MYSQL_PORT: 3306
       MYSQL_DATABASE: yami_shops
