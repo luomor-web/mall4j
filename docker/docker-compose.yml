@@ -25,7 +25,7 @@ services:
   mall4j-admin:
     build:
       context: ../
-      dockerfile: ../yami-shop-admin/Dockerfile
+      dockerfile: ./yami-shop-admin/Dockerfile
     restart: always
     container_name: mall4j-admin
     image: mall4j-admin
@@ -41,7 +41,7 @@ services:
   mall4j-api:
     build:
       context: ../
-      dockerfile: ../yami-shop-api/Dockerfile
+      dockerfile: ./yami-shop-api/Dockerfile
     restart: always
     container_name: mall4j-api
     image: mall4j-api
