@@ -31,7 +31,7 @@ services:
       REDIS_HOST: mall4j-redis
       REDIS_PORT: 6379
       REDIS_DATABASE: 0
-      REDIS_PASSWORD: null
+      # REDIS_PASSWORD: null
       MYSQL_HOST: mall4j-mysql
       MYSQL_PORT: 3306
       MYSQL_DATABASE: yami_shops
@@ -56,7 +56,7 @@ services:
       REDIS_HOST: mall4j-redis
       REDIS_PORT: 6379
       REDIS_DATABASE: 0
-      REDIS_PASSWORD: null
+      # REDIS_PASSWORD: null
       MYSQL_HOST: mall4j-mysql
       MYSQL_PORT: 3306
       MYSQL_DATABASE: yami_shops
