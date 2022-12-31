@@ -2,15 +2,15 @@ version: '3'
 services:
   mall4j-mysql:
     build:
-      context: ./
-      dockerfile: ./db/Dockerfile
+      context: ../
+      dockerfile: ../db/Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: root
     restart: always
     container_name: mall4j-mysql
     image: mall4j-mysql
     ports:
-      - 3306:3306
+      - 3316:3306
     volumes:
       - ./mall4j-mysql:/var/lib/mysql
     command: --lower_case_table_names=1
@@ -24,8 +24,8 @@ services:
 
   mall4j-admin:
     build:
-      context: ./
-      dockerfile: ./yami-shop-admin/Dockerfile
+      context: ../
+      dockerfile: ../yami-shop-admin/Dockerfile
     restart: always
     container_name: mall4j-admin
     image: mall4j-admin
@@ -40,8 +40,8 @@ services:
 
   mall4j-api:
     build:
-      context: ./
-      dockerfile: ./yami-shop-api/Dockerfile
+      context: ../
+      dockerfile: ../yami-shop-api/Dockerfile
     restart: always
     container_name: mall4j-api
     image: mall4j-api
