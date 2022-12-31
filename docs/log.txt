@@ -974,3 +974,10 @@ mall4j-admin    |       at java.lang.reflect.Method.invoke(Method.java:498)
 mall4j-admin    |       at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
 mall4j-admin    |       ... 56 common frames omitted
 mall4j-admin    |
+
+These dependencies were not found:
+
+* core-js/modules/es.array.push.js in ./node_modules/_cache-loader@4.1.0@cache-loader/dist/cjs.js??ref--13-0!./node_modules/_babel-loader@8.3.0@babel-loader/lib!./node_modules/_cache-loader@4.1.0@cache-loader/dist/cjs.js??ref--1-0!./node_modules/_vue-loader@15.10.1@vue-loader/lib??vue-loader-options!./src/components/mul-pic-upload/index.vue?vue&type=script&lang=js&, ./node_modules/_cache-loader@4.1.0@cache-loader/dist/cjs.js??ref--13-0!./node_modules/_babel-loader@8.3.0@babel-loader/lib!./node_modules/_cache-loader@4.1.0@cache-loader/dist/cjs.js??ref--1-0!./node_modules/_vue-loader@15.10.1@vue-loader/lib??vue-loader-options!./src/components/prods-select/index.vue?vue&type=script&lang=js& and 9 others
+* core-js/modules/es.error.cause.js in ./src/components/tiny-mce/dynamicLoadScript.js, ./node_modules/_cache-loader@4.1.0@cache-loader/dist/cjs.js??ref--13-0!./node_modules/_babel-loader@8.3.0@babel-loader/lib!./node_modules/_cache-loader@4.1.0@cache-loader/dist/cjs.js??ref--1-0!./node_modules/_vue-loader@15.10.1@vue-loader/lib??vue-loader-options!./src/views/main-navbar-update-password.vue?vue&type=script&lang=js& and 4 others
+
+To install them, you can run: npm install --save core-js/modules/es.array.push.js core-js/modules/es.error.cause.js
