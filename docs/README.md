@@ -12,6 +12,8 @@ docker-compose build
 docker-compose ps
 docker-compose logs -f
 
+mysql -h127.0.0.1 -uroot -p -P3317
+
 https://m-admin.7otech.com
 https://m-api.7otech.com
 ```

@@ -931,3 +931,46 @@ mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration
 mall4j-admin    |       ... 131 common frames omitted
 mall4j-admin    |
 mall4j-admin exited with code 1
+
+
+mall4j-admin    | Caused by: java.sql.SQLSyntaxErrorException: Table 'yami_shops.tz_schedule_job' doesn't exist
+mall4j-admin    |       at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+mall4j-admin    |       at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+mall4j-admin    |       at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+mall4j-admin    |       at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+mall4j-admin    |       at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+mall4j-admin    |       at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-admin    |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-admin    |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-admin    |       at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+mall4j-admin    |       at com.sun.proxy.$Proxy253.execute(Unknown Source)
+mall4j-admin    |       at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+mall4j-admin    |       at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-admin    |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-admin    |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-admin    |       at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+mall4j-admin    |       at com.sun.proxy.$Proxy252.query(Unknown Source)
+mall4j-admin    |       at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+mall4j-admin    |       at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+mall4j-admin    |       at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+mall4j-admin    |       at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+mall4j-admin    |       at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-admin    |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-admin    |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-admin    |       at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+mall4j-admin    |       at com.sun.proxy.$Proxy251.query(Unknown Source)
+mall4j-admin    |       at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+mall4j-admin    |       at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-admin    |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-admin    |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-admin    |       at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+mall4j-admin    |       ... 56 common frames omitted
+mall4j-admin    |
