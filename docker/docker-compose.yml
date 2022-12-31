@@ -10,7 +10,7 @@ services:
     container_name: mall4j-mysql
     image: mall4j-mysql
     ports:
-      - 3316:3306
+      - 3317:3306
     volumes:
       - ./mall4j-mysql:/var/lib/mysql
     command: --lower_case_table_names=1
