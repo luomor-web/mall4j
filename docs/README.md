@@ -13,6 +13,7 @@ docker-compose ps
 docker-compose logs -f
 
 mysql -h127.0.0.1 -uroot -p -P3317
+mysql -h127.0.0.1 -uroot -p -P3317 < db/yami_shop.sql
 
 https://m-admin.7otech.com
 https://m-api.7otech.com
