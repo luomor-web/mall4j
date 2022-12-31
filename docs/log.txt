@@ -1,0 +1,933 @@
+docker-compose ps
+    Name                  Command                 State                             Ports
+----------------------------------------------------------------------------------------------------------------
+mall4j-admin   /bin/sh -c java -jar -Xms5 ...   Restarting
+mall4j-api     /bin/sh -c java -jar -Xms1 ...   Up           0.0.0.0:8086->8086/tcp,:::8086->8086/tcp
+mall4j-mysql   docker-entrypoint.sh --low ...   Up           0.0.0.0:3317->3306/tcp,:::3317->3306/tcp, 33060/tcp
+mall4j-redis   docker-entrypoint.sh redis ...   Up           0.0.0.0:6379->6379/tcp,:::6379->6379/tcp
+
+docker-compose logs -f
+Attaching to mall4j-api, mall4j-admin, mall4j-redis, mall4j-mysql
+mall4j-api      |  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.
+mall4j-api      | | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
+mall4j-api      | | | ____    ____ | || |      __      | || |   _____      | || |   _____      | || |   _    _     | || |     _____    | |
+mall4j-api      | | ||_   \  /   _|| || |     /  \     | || |  |_   _|     | || |  |_   _|     | || |  | |  | |    | || |    |_   _|   | |
+mall4j-api      | | |  |   \/   |  | || |    / /\ \    | || |    | |       | || |    | |       | || |  | |__| |_   | || |      | |     | |
+mall4j-api      | | |  | |\  /| |  | || |   / ____ \   | || |    | |   _   | || |    | |   _   | || |  |____   _|  | || |   _  | |     | |
+mall4j-api      | | | _| |_\/_| |_ | || | _/ /    \ \_ | || |   _| |__/ |  | || |   _| |__/ |  | || |      _| |_   | || |  | |_' |     | |
+mall4j-api      | | ||_____||_____|| || ||____|  |____|| || |  |________|  | || |  |________|  | || |     |_____|  | || |  `.___.'     | |
+mall4j-api      | | |              | || |              | || |              | || |              | || |              | || |              | |
+mall4j-api      | | '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
+mall4j-api      |  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'
+mall4j-api      |
+mall4j-api      | 2022-12-31 18:23:32.756  INFO 1 --- [           main] com.yami.shop.api.ApiApplication         : Starting ApiApplication using Java 1.8.0_202 on 4ddec63696d8 with PID 1 (/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar started by root in /opt/projects/mall4j)
+mall4j-api      | 2022-12-31 18:23:32.759 DEBUG 1 --- [           main] com.yami.shop.api.ApiApplication         : Running with Spring Boot v2.7.0, Spring v5.3.20
+mall4j-api      | 2022-12-31 18:23:32.759  INFO 1 --- [           main] com.yami.shop.api.ApiApplication         : The following 1 profile is active: "docker"
+mall4j-api      | 2022-12-31 18:23:34.079  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+mall4j-api      | 2022-12-31 18:23:34.081  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+mall4j-api      | 2022-12-31 18:23:34.098  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+mall4j-mysql    | 2022-12-31 18:23:30+08:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.36-1debian10 started.
+mall4j-mysql    | 2022-12-31 18:23:31+08:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+mall4j-mysql    | 2022-12-31 18:23:31+08:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.36-1debian10 started.
+mall4j-mysql    | 2022-12-31T10:23:31.323890Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+mall4j-mysql    | 2022-12-31T10:23:31.324811Z 0 [Note] mysqld (mysqld 5.7.36) starting as process 1 ...
+mall4j-mysql    | 2022-12-31T10:23:31.326869Z 0 [Note] InnoDB: PUNCH HOLE support available
+mall4j-mysql    | 2022-12-31T10:23:31.326884Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+mall4j-mysql    | 2022-12-31T10:23:31.326887Z 0 [Note] InnoDB: Uses event mutexes
+mall4j-mysql    | 2022-12-31T10:23:31.326889Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+mall4j-mysql    | 2022-12-31T10:23:31.326891Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+mall4j-mysql    | 2022-12-31T10:23:31.326894Z 0 [Note] InnoDB: Using Linux native AIO
+mall4j-mysql    | 2022-12-31T10:23:31.327040Z 0 [Note] InnoDB: Number of pools: 1
+mall4j-mysql    | 2022-12-31T10:23:31.327111Z 0 [Note] InnoDB: Using CPU crc32 instructions
+mall4j-mysql    | 2022-12-31T10:23:31.333486Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+mall4j-mysql    | 2022-12-31T10:23:31.338642Z 0 [Note] InnoDB: Completed initialization of buffer pool
+mall4j-mysql    | 2022-12-31T10:23:31.342178Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+mall4j-mysql    | 2022-12-31T10:23:31.353570Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+mall4j-mysql    | 2022-12-31T10:23:31.363125Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+mall4j-mysql    | 2022-12-31T10:23:31.363163Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+mall4j-mysql    | 2022-12-31T10:23:31.392930Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+mall4j-mysql    | 2022-12-31T10:23:31.393480Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+mall4j-mysql    | 2022-12-31T10:23:31.393493Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+mall4j-mysql    | 2022-12-31T10:23:31.393971Z 0 [Note] InnoDB: Waiting for purge to start
+mall4j-mysql    | 2022-12-31T10:23:31.444144Z 0 [Note] InnoDB: 5.7.36 started; log sequence number 12671318
+mall4j-mysql    | 2022-12-31T10:23:31.444325Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+mall4j-mysql    | 2022-12-31T10:23:31.444450Z 0 [Note] Plugin 'FEDERATED' is disabled.
+mall4j-mysql    | 2022-12-31T10:23:31.446641Z 0 [Note] InnoDB: Buffer pool(s) load completed at 221231 18:23:31
+mall4j-mysql    | 2022-12-31T10:23:31.448177Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+mall4j-mysql    | 2022-12-31T10:23:31.448193Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+mall4j-mysql    | 2022-12-31T10:23:31.448196Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+mall4j-mysql    | 2022-12-31T10:23:31.448199Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+mall4j-mysql    | 2022-12-31T10:23:31.448636Z 0 [Warning] CA certificate ca.pem is self signed.
+mall4j-mysql    | 2022-12-31T10:23:31.448666Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+mall4j-mysql    | 2022-12-31T10:23:31.448989Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+mall4j-mysql    | 2022-12-31T10:23:31.449022Z 0 [Note] IPv6 is available.
+mall4j-mysql    | 2022-12-31T10:23:31.449033Z 0 [Note]   - '::' resolves to '::';
+mall4j-mysql    | 2022-12-31T10:23:31.449044Z 0 [Note] Server socket created on IP: '::'.
+mall4j-mysql    | 2022-12-31T10:23:31.454263Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all
+OS users. Consider choosing a different directory.
+mall4j-mysql    | 2022-12-31T10:23:31.459633Z 0 [Note] Event Scheduler: Loaded 0 events
+mall4j-mysql    | 2022-12-31T10:23:31.459817Z 0 [Note] mysqld: ready for connections.
+mall4j-mysql    | Version: '5.7.36'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+mall4j-admin    |  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.
+mall4j-admin    | | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
+mall4j-admin    | | | ____    ____ | || |      __      | || |   _____      | || |   _____      | || |   _    _     | || |     _____    | |
+mall4j-admin    | | ||_   \  /   _|| || |     /  \     | || |  |_   _|     | || |  |_   _|     | || |  | |  | |    | || |    |_   _|   | |
+mall4j-admin    | | |  |   \/   |  | || |    / /\ \    | || |    | |       | || |    | |       | || |  | |__| |_   | || |      | |     | |
+mall4j-admin    | | |  | |\  /| |  | || |   / ____ \   | || |    | |   _   | || |    | |   _   | || |  |____   _|  | || |   _  | |     | |
+mall4j-admin    | | | _| |_\/_| |_ | || | _/ /    \ \_ | || |   _| |__/ |  | || |   _| |__/ |  | || |      _| |_   | || |  | |_' |     | |
+mall4j-admin    | | ||_____||_____|| || ||____|  |____|| || |  |________|  | || |  |________|  | || |     |_____|  | || |  `.___.'     | |
+mall4j-admin    | | |              | || |              | || |              | || |              | || |              | || |              | |
+mall4j-admin    | | '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
+mall4j-admin    |  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'
+mall4j-admin    |
+mall4j-admin    | 2022-12-31 18:23:32.836  INFO 1 --- [           main] com.yami.shop.admin.WebApplication       : Starting WebApplication using Java 1.8.0_202 on ac2d14a46969 with PID 1 (/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar started by root in /opt/projects/mall4j)
+mall4j-admin    | 2022-12-31 18:23:32.839 DEBUG 1 --- [           main] com.yami.shop.admin.WebApplication       : Running with Spring Boot v2.7.0, Spring v5.3.20
+mall4j-admin    | 2022-12-31 18:23:32.839  INFO 1 --- [           main] com.yami.shop.admin.WebApplication       : The following 2 profiles are active: "docker", "quartz"
+mall4j-admin    | 2022-12-31 18:23:34.228  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+mall4j-admin    | 2022-12-31 18:23:34.230  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+mall4j-admin    | 2022-12-31 18:23:34.253  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+mall4j-redis    | 1:C 31 Dec 2022 10:23:30.961 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+mall4j-redis    | 1:C 31 Dec 2022 10:23:30.961 # Redis version=5.0.4, bits=64, commit=00000000, modified=0, pid=1, just started
+mall4j-redis    | 1:C 31 Dec 2022 10:23:30.961 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+mall4j-redis    | 1:M 31 Dec 2022 10:23:30.962 * Running mode=standalone, port=6379.
+mall4j-redis    | 1:M 31 Dec 2022 10:23:30.962 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+mall4j-redis    | 1:M 31 Dec 2022 10:23:30.962 # Server initialized
+mall4j-redis    | 1:M 31 Dec 2022 10:23:30.962 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+mall4j-redis    | 1:M 31 Dec 2022 10:23:30.962 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+mall4j-redis    | 1:M 31 Dec 2022 10:23:30.962 * Ready to accept connections
+mall4j-api      | 2022-12-31 18:23:35.192  WARN 1 --- [           main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+mall4j-api      | 2022-12-31 18:23:35.234  INFO 1 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+mall4j-api      | 2022-12-31 18:23:35.235  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2429 ms
+mall4j-api      | 2022-12-31 18:23:35.242  INFO 1 --- [           main] c.y.s.s.c.a.DefaultAuthConfigAdapter     : not implement other AuthConfigAdapter, use DefaultAuthConfigAdapter... all url need auth...
+mall4j-api      | 2022-12-31 18:23:35.408  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't
+parse config
+mall4j-api      | 2022-12-31 18:23:35.425  INFO 1 --- [           main] ConditionEvaluationReportLoggingListener :
+mall4j-api      |
+mall4j-api      | Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+mall4j-admin    | 2022-12-31 18:23:35.451  WARN 1 --- [           main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+mall4j-api      | 2022-12-31 18:23:35.452 ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+mall4j-api      |
+mall4j-api      | org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+mall4j-api      |       at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+mall4j-api      |       at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+mall4j-api      |       at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+mall4j-api      |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+mall4j-api      |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+mall4j-api      |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+mall4j-api      |       at com.yami.shop.api.ApiApplication.main(ApiApplication.java:28)
+mall4j-api      |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-api      |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-api      |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-api      |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-api      |       at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+mall4j-api      |       at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+mall4j-api      |       at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+mall4j-api      |       at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+mall4j-api      | Caused by: java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException:
+Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through
+constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate'
+defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined
+in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:257)
+mall4j-api      |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory.createManager(UndertowServletWebServerFactory.java:330)
+mall4j-api      |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory.getWebServer(UndertowServletWebServerFactory.java:299)
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+mall4j-api      |       ... 16 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+mall4j-api      |       at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+mall4j-api      |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+mall4j-api      |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+mall4j-api      |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+mall4j-api      |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+mall4j-api      |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory$Initializer.onStartup(UndertowServletWebServerFactory.java:508)
+mall4j-api      |       at io.undertow.servlet.core.DeploymentManagerImpl$1.call(DeploymentManagerImpl.java:204)
+mall4j-api      |       at io.undertow.servlet.core.DeploymentManagerImpl$1.call(DeploymentManagerImpl.java:187)
+mall4j-api      |       at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
+mall4j-api      |       at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+mall4j-api      |       at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:255)
+mall4j-api      |       ... 20 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+mall4j-api      |       at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+mall4j-api      |       ... 51 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via
+factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+mall4j-api      |       ... 65 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-api      |       ... 78 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class
+path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception
+is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-api      |       ... 92 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-api      |       ... 106 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+mall4j-api      |       ... 120 common frames omitted
+mall4j-api      | Caused by: java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:120)
+mall4j-api      |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$cf9449a2.CGLIB$redisson$2(<generated>)
+mall4j-api      |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$cf9449a2$$FastClassBySpringCGLIB$$6e63c1d0.invoke(<generated>)
+mall4j-api      |       at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+mall4j-api      |       at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+mall4j-api      |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$cf9449a2.redisson(<generated>)
+mall4j-api      |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-api      |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-api      |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-api      |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-api      |       at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+mall4j-api      |       ... 121 common frames omitted
+mall4j-api      | Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `int` from String "${REDIS_DATABASE}": not a valid `int` value
+mall4j-api      |  at [Source: (StringReader); line: 4, column: 13] (through reference chain: org.redisson.config.Config["singleServerConfig"]->org.redisson.config.SingleServerConfig["database"])
+mall4j-api      |       at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+mall4j-api      |       at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1991)
+mall4j-api      |       at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1219)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseIntPrimitive(StdDeserializer.java:768)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseIntPrimitive(StdDeserializer.java:747)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$IntegerDeserializer.deserialize(NumberDeserializers.java:529)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$IntegerDeserializer.deserialize(NumberDeserializers.java:506)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:313)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:313)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+mall4j-api      |       at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+mall4j-api      |       at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+mall4j-api      |       at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+mall4j-api      |       at org.redisson.config.ConfigSupport.fromYAML(ConfigSupport.java:182)
+mall4j-api      |       at org.redisson.config.Config.fromYAML(Config.java:632)
+mall4j-api      |       at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:118)
+mall4j-api      |       ... 131 common frames omitted
+mall4j-api      |
+mall4j-admin    | 2022-12-31 18:23:35.475  INFO 1 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+mall4j-admin    | 2022-12-31 18:23:35.476  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2582 ms
+mall4j-admin    | 2022-12-31 18:23:35.482  INFO 1 --- [           main] c.y.s.s.c.a.DefaultAuthConfigAdapter     : not implement other AuthConfigAdapter, use DefaultAuthConfigAdapter... all url need auth...
+mall4j-admin    | 2022-12-31 18:23:35.652  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    | 2022-12-31 18:23:35.668  INFO 1 --- [           main] ConditionEvaluationReportLoggingListener :
+mall4j-admin    |
+mall4j-admin    | Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+mall4j-admin    | 2022-12-31 18:23:35.694 ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+mall4j-admin    |
+mall4j-admin    | org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+mall4j-admin    |       at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+mall4j-admin    |       at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+mall4j-admin    |       at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+mall4j-admin    |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+mall4j-admin    |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+mall4j-admin    |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+mall4j-admin    |       at com.yami.shop.admin.WebApplication.main(WebApplication.java:30)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-admin    |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-admin    |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-admin    |       at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+mall4j-admin    |       at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+mall4j-admin    |       at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+mall4j-admin    |       at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+mall4j-admin    | Caused by: java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException:
+Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:257)
+mall4j-admin    |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory.createManager(UndertowServletWebServerFactory.java:330)
+mall4j-admin    |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory.getWebServer(UndertowServletWebServerFactory.java:299)
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+mall4j-admin    |       ... 16 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+mall4j-admin    |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+mall4j-admin    |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+mall4j-admin    |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+mall4j-admin    |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+mall4j-admin    |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory$Initializer.onStartup(UndertowServletWebServerFactory.java:508)
+mall4j-admin    |       at io.undertow.servlet.core.DeploymentManagerImpl$1.call(DeploymentManagerImpl.java:204)
+mall4j-admin    |       at io.undertow.servlet.core.DeploymentManagerImpl$1.call(DeploymentManagerImpl.java:187)
+mall4j-admin    |       at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
+mall4j-admin    |       at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+mall4j-admin    |       at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:255)
+mall4j-admin    |       ... 20 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+mall4j-admin    |       ... 51 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+mall4j-admin    |       ... 65 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-admin    |       ... 78 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class
+path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception
+is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-admin    |       ... 92 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-admin    |       ... 106 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+mall4j-admin    |       ... 120 common frames omitted
+mall4j-admin    | Caused by: java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:120)
+mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$b509d109.CGLIB$redisson$2(<generated>)
+mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$b509d109$$FastClassBySpringCGLIB$$d771c34e.invoke(<generated>)
+mall4j-admin    |       at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+mall4j-admin    |       at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$b509d109.redisson(<generated>)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-admin    |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-admin    |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-admin    |       at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+mall4j-admin    |       ... 121 common frames omitted
+mall4j-admin    | Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `int` from String "${REDIS_DATABASE}": not a valid `int` value
+mall4j-admin    |  at [Source: (StringReader); line: 4, column: 13] (through reference chain: org.redisson.config.Config["singleServerConfig"]->org.redisson.config.SingleServerConfig["database"])
+mall4j-admin    |       at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+mall4j-admin    |       at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1991)
+mall4j-admin    |       at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1219)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseIntPrimitive(StdDeserializer.java:768)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseIntPrimitive(StdDeserializer.java:747)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$IntegerDeserializer.deserialize(NumberDeserializers.java:529)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$IntegerDeserializer.deserialize(NumberDeserializers.java:506)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:313)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:313)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+mall4j-admin    |       at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+mall4j-admin    |       at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+mall4j-admin    |       at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+mall4j-admin    |       at org.redisson.config.ConfigSupport.fromYAML(ConfigSupport.java:182)
+mall4j-admin    |       at org.redisson.config.Config.fromYAML(Config.java:632)
+mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:118)
+mall4j-admin    |       ... 131 common frames omitted
+mall4j-admin    |
+mall4j-api      |  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.
+mall4j-api      | | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
+mall4j-api      | | | ____    ____ | || |      __      | || |   _____      | || |   _____      | || |   _    _     | || |     _____    | |
+mall4j-api      | | ||_   \  /   _|| || |     /  \     | || |  |_   _|     | || |  |_   _|     | || |  | |  | |    | || |    |_   _|   | |
+mall4j-api      | | |  |   \/   |  | || |    / /\ \    | || |    | |       | || |    | |       | || |  | |__| |_   | || |      | |     | |
+mall4j-api      | | |  | |\  /| |  | || |   / ____ \   | || |    | |   _   | || |    | |   _   | || |  |____   _|  | || |   _  | |     | |
+mall4j-api      | | | _| |_\/_| |_ | || | _/ /    \ \_ | || |   _| |__/ |  | || |   _| |__/ |  | || |      _| |_   | || |  | |_' |     | |
+mall4j-api      | | ||_____||_____|| || ||____|  |____|| || |  |________|  | || |  |________|  | || |     |_____|  | || |  `.___.'     | |
+mall4j-api      | | |              | || |              | || |              | || |              | || |              | || |              | |
+mall4j-api      | | '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
+mall4j-api      |  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'
+mall4j-api      |
+mall4j-api      | 2022-12-31 18:23:37.219  INFO 1 --- [           main] com.yami.shop.api.ApiApplication         : Starting ApiApplication using Java 1.8.0_202 on 4ddec63696d8 with PID 1 (/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar started by root in /opt/projects/mall4j)
+mall4j-api      | 2022-12-31 18:23:37.221 DEBUG 1 --- [           main] com.yami.shop.api.ApiApplication         : Running with Spring Boot v2.7.0, Spring v5.3.20
+mall4j-api      | 2022-12-31 18:23:37.222  INFO 1 --- [           main] com.yami.shop.api.ApiApplication         : The following 1 profile is active: "docker"
+mall4j-admin    |  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.
+mall4j-admin    | | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
+mall4j-admin    | | | ____    ____ | || |      __      | || |   _____      | || |   _____      | || |   _    _     | || |     _____    | |
+mall4j-admin    | | ||_   \  /   _|| || |     /  \     | || |  |_   _|     | || |  |_   _|     | || |  | |  | |    | || |    |_   _|   | |
+mall4j-admin    | | |  |   \/   |  | || |    / /\ \    | || |    | |       | || |    | |       | || |  | |__| |_   | || |      | |     | |
+mall4j-admin    | | |  | |\  /| |  | || |   / ____ \   | || |    | |   _   | || |    | |   _   | || |  |____   _|  | || |   _  | |     | |
+mall4j-admin    | | | _| |_\/_| |_ | || | _/ /    \ \_ | || |   _| |__/ |  | || |   _| |__/ |  | || |      _| |_   | || |  | |_' |     | |
+mall4j-admin    | | ||_____||_____|| || ||____|  |____|| || |  |________|  | || |  |________|  | || |     |_____|  | || |  `.___.'     | |
+mall4j-admin    | | |              | || |              | || |              | || |              | || |              | || |              | |
+mall4j-admin    | | '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
+mall4j-admin    |  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'
+mall4j-admin    |
+mall4j-admin    | 2022-12-31 18:23:37.409  INFO 1 --- [           main] com.yami.shop.admin.WebApplication       : Starting WebApplication using Java 1.8.0_202 on ac2d14a46969 with PID 1 (/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar started by root in /opt/projects/mall4j)
+mall4j-admin    | 2022-12-31 18:23:37.412 DEBUG 1 --- [           main] com.yami.shop.admin.WebApplication       : Running with Spring Boot v2.7.0, Spring v5.3.20
+mall4j-admin    | 2022-12-31 18:23:37.412  INFO 1 --- [           main] com.yami.shop.admin.WebApplication       : The following 2 profiles are active: "docker", "quartz"
+mall4j-api      | 2022-12-31 18:23:38.513  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+mall4j-api      | 2022-12-31 18:23:38.516  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+mall4j-api      | 2022-12-31 18:23:38.532  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+mall4j-admin    | 2022-12-31 18:23:38.836  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+mall4j-admin    | 2022-12-31 18:23:38.839  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+mall4j-admin    | 2022-12-31 18:23:38.868  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+mall4j-api      | 2022-12-31 18:23:39.681  WARN 1 --- [           main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+mall4j-api      | 2022-12-31 18:23:39.730  INFO 1 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+mall4j-api      | 2022-12-31 18:23:39.730  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2458 ms
+mall4j-api      | 2022-12-31 18:23:39.737  INFO 1 --- [           main] c.y.s.s.c.a.DefaultAuthConfigAdapter     : not implement other AuthConfigAdapter, use DefaultAuthConfigAdapter... all url need auth...
+mall4j-api      | 2022-12-31 18:23:39.900  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't
+parse config
+mall4j-api      | 2022-12-31 18:23:39.917  INFO 1 --- [           main] ConditionEvaluationReportLoggingListener :
+mall4j-api      |
+mall4j-api      | Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+mall4j-api      | 2022-12-31 18:23:39.951 ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+mall4j-api      |
+mall4j-api      | org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+mall4j-api      |       at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+mall4j-api      |       at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+mall4j-api      |       at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+mall4j-api      |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+mall4j-api      |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+mall4j-api      |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+mall4j-api      |       at com.yami.shop.api.ApiApplication.main(ApiApplication.java:28)
+mall4j-api      |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-api      |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-api      |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-api      |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-api      |       at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+mall4j-api      |       at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+mall4j-api      |       at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+mall4j-api      |       at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+mall4j-api      | Caused by: java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException:
+Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through
+constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate'
+defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined
+in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:257)
+mall4j-api      |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory.createManager(UndertowServletWebServerFactory.java:330)
+mall4j-api      |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory.getWebServer(UndertowServletWebServerFactory.java:299)
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+mall4j-api      |       ... 16 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+mall4j-api      |       at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+mall4j-api      |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+mall4j-api      |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+mall4j-api      |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+mall4j-api      |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+mall4j-api      |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+mall4j-api      |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory$Initializer.onStartup(UndertowServletWebServerFactory.java:508)
+mall4j-api      |       at io.undertow.servlet.core.DeploymentManagerImpl$1.call(DeploymentManagerImpl.java:204)
+mall4j-api      |       at io.undertow.servlet.core.DeploymentManagerImpl$1.call(DeploymentManagerImpl.java:187)
+mall4j-api      |       at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
+mall4j-api      |       at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+mall4j-api      |       at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:255)
+mall4j-api      |       ... 20 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+mall4j-api      |       at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+mall4j-api      |       ... 51 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-api-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via
+factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-api      |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+mall4j-api      |       ... 65 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-api      |       ... 78 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class
+path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception
+is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-api      |       ... 92 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-api      |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-api      |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-api      |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-api      |       ... 106 common frames omitted
+mall4j-api      | Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+mall4j-api      |       at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+mall4j-api      |       ... 120 common frames omitted
+mall4j-api      | Caused by: java.lang.IllegalArgumentException: Can't parse config
+mall4j-api      |       at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:120)
+mall4j-api      |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$cf9449a2.CGLIB$redisson$1(<generated>)
+mall4j-api      |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$cf9449a2$$FastClassBySpringCGLIB$$6e63c1d0.invoke(<generated>)
+mall4j-api      |       at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+mall4j-api      |       at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+mall4j-api      |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$cf9449a2.redisson(<generated>)
+mall4j-api      |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-api      |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-api      |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-api      |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-api      |       at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+mall4j-api      |       ... 121 common frames omitted
+mall4j-api      | Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `int` from String "${REDIS_DATABASE}": not a valid `int` value
+mall4j-api      |  at [Source: (StringReader); line: 4, column: 13] (through reference chain: org.redisson.config.Config["singleServerConfig"]->org.redisson.config.SingleServerConfig["database"])
+mall4j-api      |       at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+mall4j-api      |       at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1991)
+mall4j-api      |       at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1219)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseIntPrimitive(StdDeserializer.java:768)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseIntPrimitive(StdDeserializer.java:747)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$IntegerDeserializer.deserialize(NumberDeserializers.java:529)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$IntegerDeserializer.deserialize(NumberDeserializers.java:506)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:313)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:313)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+mall4j-api      |       at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+mall4j-api      |       at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+mall4j-api      |       at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+mall4j-api      |       at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+mall4j-api      |       at org.redisson.config.ConfigSupport.fromYAML(ConfigSupport.java:182)
+mall4j-api      |       at org.redisson.config.Config.fromYAML(Config.java:632)
+mall4j-api      |       at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:118)
+mall4j-api      |       ... 131 common frames omitted
+mall4j-api      |
+mall4j-admin    | 2022-12-31 18:23:40.125  WARN 1 --- [           main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+mall4j-admin    | 2022-12-31 18:23:40.147  INFO 1 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+mall4j-admin    | 2022-12-31 18:23:40.147  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2670 ms
+mall4j-admin    | 2022-12-31 18:23:40.155  INFO 1 --- [           main] c.y.s.s.c.a.DefaultAuthConfigAdapter     : not implement other AuthConfigAdapter, use DefaultAuthConfigAdapter... all url need auth...
+mall4j-api exited with code 1
+mall4j-admin    | 2022-12-31 18:23:40.333  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    | 2022-12-31 18:23:40.348  INFO 1 --- [           main] ConditionEvaluationReportLoggingListener :
+mall4j-admin    |
+mall4j-admin    | Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+mall4j-admin    | 2022-12-31 18:23:40.375 ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+mall4j-admin    |
+mall4j-admin    | org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+mall4j-admin    |       at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+mall4j-admin    |       at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+mall4j-admin    |       at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+mall4j-admin    |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+mall4j-admin    |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+mall4j-admin    |       at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+mall4j-admin    |       at com.yami.shop.admin.WebApplication.main(WebApplication.java:30)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-admin    |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-admin    |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-admin    |       at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+mall4j-admin    |       at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+mall4j-admin    |       at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+mall4j-admin    |       at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+mall4j-admin    | Caused by: java.lang.RuntimeException: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException:
+Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:257)
+mall4j-admin    |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory.createManager(UndertowServletWebServerFactory.java:330)
+mall4j-admin    |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory.getWebServer(UndertowServletWebServerFactory.java:299)
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+mall4j-admin    |       ... 16 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authConfig': Unsatisfied dependency expressed through field 'authFilter'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+mall4j-admin    |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+mall4j-admin    |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+mall4j-admin    |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+mall4j-admin    |       at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+mall4j-admin    |       at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+mall4j-admin    |       at org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory$Initializer.onStartup(UndertowServletWebServerFactory.java:508)
+mall4j-admin    |       at io.undertow.servlet.core.DeploymentManagerImpl$1.call(DeploymentManagerImpl.java:204)
+mall4j-admin    |       at io.undertow.servlet.core.DeploymentManagerImpl$1.call(DeploymentManagerImpl.java:187)
+mall4j-admin    |       at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
+mall4j-admin    |       at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+mall4j-admin    |       at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:255)
+mall4j-admin    |       ... 20 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authFilter': Unsatisfied dependency expressed through field 'tokenStore'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+mall4j-admin    |       ... 51 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tokenStore' defined in URL [jar:file:/opt/projects/mall4j/yami-shop-admin-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/yami-shop-security-common-0.0.1-SNAPSHOT.jar!/com/yami/shop/security/common/manager/TokenStore.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-admin    |       at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+mall4j-admin    |       ... 65 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisTemplate' defined in class path resource [com/yami/shop/common/config/RedisCacheConfig.class]: Unsatisfied dependency expressed through method 'redisTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-admin    |       ... 78 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redissonConnectionFactory' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'redissonConnectionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class
+path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception
+is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-admin    |       ... 92 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+mall4j-admin    |       at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+mall4j-admin    |       at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+mall4j-admin    |       at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+mall4j-admin    |       ... 106 common frames omitted
+mall4j-admin    | Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception; nested exception is java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+mall4j-admin    |       at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+mall4j-admin    |       ... 120 common frames omitted
+mall4j-admin    | Caused by: java.lang.IllegalArgumentException: Can't parse config
+mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:120)
+mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$b509d109.CGLIB$redisson$1(<generated>)
+mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$b509d109$$FastClassBySpringCGLIB$$d771c34e.invoke(<generated>)
+mall4j-admin    |       at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+mall4j-admin    |       at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration$$EnhancerBySpringCGLIB$$b509d109.redisson(<generated>)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+mall4j-admin    |       at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+mall4j-admin    |       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+mall4j-admin    |       at java.lang.reflect.Method.invoke(Method.java:498)
+mall4j-admin    |       at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+mall4j-admin    |       ... 121 common frames omitted
+mall4j-admin    | Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `int` from String "${REDIS_DATABASE}": not a valid `int` value
+mall4j-admin    |  at [Source: (StringReader); line: 4, column: 13] (through reference chain: org.redisson.config.Config["singleServerConfig"]->org.redisson.config.SingleServerConfig["database"])
+mall4j-admin    |       at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+mall4j-admin    |       at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1991)
+mall4j-admin    |       at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1219)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseIntPrimitive(StdDeserializer.java:768)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseIntPrimitive(StdDeserializer.java:747)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$IntegerDeserializer.deserialize(NumberDeserializers.java:529)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.std.NumberDeserializers$IntegerDeserializer.deserialize(NumberDeserializers.java:506)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:313)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:313)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+mall4j-admin    |       at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+mall4j-admin    |       at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+mall4j-admin    |       at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+mall4j-admin    |       at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+mall4j-admin    |       at org.redisson.config.ConfigSupport.fromYAML(ConfigSupport.java:182)
+mall4j-admin    |       at org.redisson.config.Config.fromYAML(Config.java:632)
+mall4j-admin    |       at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:118)
+mall4j-admin    |       ... 131 common frames omitted
+mall4j-admin    |
+mall4j-admin exited with code 1
