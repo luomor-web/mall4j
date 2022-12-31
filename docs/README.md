@@ -25,6 +25,8 @@ cnpm install
 npm run dev
 
 cnpm install core-js --save
+cnpm install
+npm run dev
 ```
 
 ```shell

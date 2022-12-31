@@ -981,3 +981,124 @@ These dependencies were not found:
 * core-js/modules/es.error.cause.js in ./src/components/tiny-mce/dynamicLoadScript.js, ./node_modules/_cache-loader@4.1.0@cache-loader/dist/cjs.js??ref--13-0!./node_modules/_babel-loader@8.3.0@babel-loader/lib!./node_modules/_cache-loader@4.1.0@cache-loader/dist/cjs.js??ref--1-0!./node_modules/_vue-loader@15.10.1@vue-loader/lib??vue-loader-options!./src/views/main-navbar-update-password.vue?vue&type=script&lang=js& and 4 others
 
 To install them, you can run: npm install --save core-js/modules/es.array.push.js core-js/modules/es.error.cause.js
+
+mall4j-admin    | 2022-12-31 19:32:00.016 ERROR 1 --- [        task-12] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(com.yami.shop.quartz.event.ScheduleJobEvent)
+mall4j-admin    |
+mall4j-admin    | java.lang.NullPointerException: null
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(SysJobListener.java:48)
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener$$FastClassBySpringCGLIB$$841de246.invoke(<generated>)
+mall4j-admin    |       at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+mall4j-admin    |       at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+mall4j-admin    |       at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+mall4j-admin    |       at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+mall4j-admin    |       at java.lang.Thread.run(Thread.java:748)
+mall4j-admin    |
+mall4j-admin    | 2022-12-31 19:33:00.021 ERROR 1 --- [        task-13] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(com.yami.shop.quartz.event.ScheduleJobEvent)
+mall4j-admin    |
+mall4j-admin    | java.lang.NullPointerException: null
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(SysJobListener.java:48)
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener$$FastClassBySpringCGLIB$$841de246.invoke(<generated>)
+mall4j-admin    |       at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+mall4j-admin    |       at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+mall4j-admin    |       at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+mall4j-admin    |       at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+mall4j-admin    |       at java.lang.Thread.run(Thread.java:748)
+mall4j-admin    |
+mall4j-admin    | 2022-12-31 19:34:00.016 ERROR 1 --- [        task-14] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(com.yami.shop.quartz.event.ScheduleJobEvent)
+mall4j-admin    |
+mall4j-admin    | java.lang.NullPointerException: null
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(SysJobListener.java:48)
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener$$FastClassBySpringCGLIB$$841de246.invoke(<generated>)
+mall4j-admin    |       at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+mall4j-admin    |       at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+mall4j-admin    |       at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+mall4j-admin    |       at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+mall4j-admin    |       at java.lang.Thread.run(Thread.java:748)
+mall4j-admin    |
+mall4j-admin    | 2022-12-31 19:35:00.035 ERROR 1 --- [        task-15] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(com.yami.shop.quartz.event.ScheduleJobEvent)
+mall4j-admin    |
+mall4j-admin    | java.lang.NullPointerException: null
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(SysJobListener.java:48)
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener$$FastClassBySpringCGLIB$$841de246.invoke(<generated>)
+mall4j-admin    |       at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+mall4j-admin    |       at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+mall4j-admin    |       at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+mall4j-admin    |       at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+mall4j-admin    |       at java.lang.Thread.run(Thread.java:748)
+mall4j-admin    |
+mall4j-admin    | 2022-12-31 19:35:00.050 ERROR 1 --- [        task-16] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(com.yami.shop.quartz.event.ScheduleJobEvent)
+mall4j-admin    |
+mall4j-admin    | java.lang.NullPointerException: null
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(SysJobListener.java:48)
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener$$FastClassBySpringCGLIB$$841de246.invoke(<generated>)
+mall4j-admin    |       at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+mall4j-admin    |       at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+mall4j-admin    |       at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+mall4j-admin    |       at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+mall4j-admin    |       at java.lang.Thread.run(Thread.java:748)
+mall4j-admin    |
+mall4j-admin    | 2022-12-31 19:36:00.023 ERROR 1 --- [        task-17] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(com.yami.shop.quartz.event.ScheduleJobEvent)
+mall4j-admin    |
+mall4j-admin    | java.lang.NullPointerException: null
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(SysJobListener.java:48)
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener$$FastClassBySpringCGLIB$$841de246.invoke(<generated>)
+mall4j-admin    |       at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+mall4j-admin    |       at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+mall4j-admin    |       at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+mall4j-admin    |       at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+mall4j-admin    |       at java.lang.Thread.run(Thread.java:748)
+mall4j-admin    |
+mall4j-admin    | 2022-12-31 19:37:00.016 ERROR 1 --- [        task-18] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(com.yami.shop.quartz.event.ScheduleJobEvent)
+mall4j-admin    |
+mall4j-admin    | java.lang.NullPointerException: null
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(SysJobListener.java:48)
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener$$FastClassBySpringCGLIB$$841de246.invoke(<generated>)
+mall4j-admin    |       at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+mall4j-admin    |       at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+mall4j-admin    |       at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+mall4j-admin    |       at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+mall4j-admin    |       at java.lang.Thread.run(Thread.java:748)
+mall4j-admin    |
+mall4j-admin    | 2022-12-31 19:38:00.028 ERROR 1 --- [        task-19] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(com.yami.shop.quartz.event.ScheduleJobEvent)
+mall4j-admin    |
+mall4j-admin    | java.lang.NullPointerException: null
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener.scheduleJobEventListener(SysJobListener.java:48)
+mall4j-admin    |       at com.yami.shop.quartz.listener.SysJobListener$$FastClassBySpringCGLIB$$841de246.invoke(<generated>)
+mall4j-admin    |       at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+mall4j-admin    |       at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+mall4j-admin    |       at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+mall4j-admin    |       at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+mall4j-admin    |       at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+mall4j-admin    |       at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+mall4j-admin    |       at java.lang.Thread.run(Thread.java:748)
+mall4j-admin    |
